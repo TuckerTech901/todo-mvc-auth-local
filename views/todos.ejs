@@ -4,24 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">  
+      <title>Assignment Tracker</title>
+   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/526bf3620d.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
-
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+<body class = 'text-center' >
+    <h1>Assignments</h1>
+    
+<table class="table table-striped">
+  <caption>List of assignments</caption>
+  <thead>
+    <tr>
+      <th scope="col">Completed?</th>
+      <th scope="col">Assignment</th>
+      <!--th scope="col">Due Date</th-->
+      <!--th scope="col">Subject</th-->
+      <th scope="col">Delete Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% todos.forEach( el => { %>
+            <tr class='todoItem' data-id='<%=el._id%>'>
+                <!--checkbox does not stay checked--><td class='<%= el.completed === true ? 'completed' : 'not'%>'>
+                <div>
+                <input class="form-check-input" type="checkbox" value="" aria-label="..." id="flexCheckDefault">
+                </div>
+                </td>
+                  <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %>
+                </td>
+              <!--Due date--><!--td class='<%= el.completed === true ? 'completed' : 'not'%>'></td>--
+              <!--subject--><!--td class='<%= el.completed === true ? 'completed' : 'not'%>'></td-->
+              <td class='del'><i class="fa-solid fa-trash"></td>
+            </tr>
+      <% }) %>    
+    </tr>
+  </tbody>
+</table>
+      
+    <h2><%= user.userName %> has <%= left %> assignments left to do.</h2>
 
     <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <!--hitting DB, not showing in DOM--><input type="text" placeholder="Enter Assignment" name='todoItem'>
+      <!--not hitting DB, not showing in DOM--><!--input type="text" placeholder="Enter Due Date" name='date'-->
+      <!--not hitting DB, not showing in DOM--><!--input type="text" placeholder="Enter Subject" name='subject'-->
         <input type="submit">
     </form>
 

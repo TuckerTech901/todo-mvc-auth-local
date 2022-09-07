@@ -3,6 +3,7 @@ const router = express.Router()
 const authController = require('../controllers/auth') 
 const homeController = require('../controllers/home')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
+//const cors= require('cors')
 
 router.get('/', homeController.getIndex)
 router.get('/login', authController.getLogin)

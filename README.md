@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A Homework Tracker App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app. 
 
 ---
 
@@ -10,7 +10,7 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+- It's a beginner-level app created to understand how MVC concept and logins are added
 
 ---
 
@@ -22,7 +22,7 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+bcrypt, bootstrap, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
 ---
 
@@ -32,13 +32,18 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 ---
 
-# Things to add
+# Planned Enhancements
 
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
- 
- Have fun testing and improving it! 😎
+Create a homework tracker application wherein users create an account, make lists of assignments, and create and edit their homework assignments. 
+
+Add an introduction page that allows users the choice of logging in if they already have an account or signing up for one.  
+
+Add a "create an account" option on the login option page to prevent users from having to backtrack and start the process from the beginning. 
+
+Create a "to-do table" table that includes the subject name, assignment description, and due date. 
+
+Add the ability to delete assignments once completed and update if partially complete. 
+
+Add additional objects for Assignment, Subject and Date Due. 
 
 

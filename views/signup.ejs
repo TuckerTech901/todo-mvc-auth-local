@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <title>Create An Account</title>
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+  
+<body class = 'text-center' >
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+      <h1>Create An Account</h1>
     <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+        <label for ="exampleInputEmail1">User Name</label> 
+      <input type="text" name="userName" placeholder="User Name"
+        class="form-control" >
+        <label for ="exampleInputEmail1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for ="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"  name="password" placeholder="Password">
+       <label for ="exampleInputPassword1">Confirm Password</label>
+      <input 
+          class="form-control" id="exampleInputPassword1"
+          type="password" name="confirmPassword" placeholder="Confirm Password">
+        <input  class="btn btn-primary" type="submit">
     </form>
 </body>
 </html>
