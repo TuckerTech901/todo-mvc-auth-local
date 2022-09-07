@@ -9,18 +9,18 @@ const TodoSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  //subject: {
-    //type: String,
-  //},
-  //date: {
-    //type: Date,
-  //},
-  //Replit throwing error re: userId; this object is not in Leon's code
+  subject: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
   userId: {
     type: String,
     required: true,
   }
-
 })
 
 module.exports = mongoose.model('Todo', TodoSchema)
